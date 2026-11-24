@@ -1,0 +1,25 @@
+m_ProjectFiles:
+  m_ManifestFileStatus:
+    m_FilePath: C:/Users/antoi/Documents/S9/Entrepot_Automatise_Multi_Agents/New Unity Project/Packages/manifest.json
+    m_PathExists: 1
+    m_ContentTrackingEnabled: 1
+    m_ModificationDate:
+      serializedVersion: 2
+      ticks: 639311224456660681
+    m_Hash: 2010176602
+  m_LockFileStatus:
+    m_FilePath: C:/Users/antoi/Documents/S9/Entrepot_Automatise_Multi_Agents/New Unity Project/Packages/packages-lock.json
+    m_PathExists: 0
+    m_ContentTrackingEnabled: 1
+    m_ModificationDate:
+      serializedVersion: 2
+      ticks: 0
+    m_Hash: 0
+m_EmbeddedPackageManifests:
+  m_ManifestsStatus: {}
+m_LocalPackages:
+  m_LocalFileStatus: []
+m_ProjectPath: C:/Users/antoi/Documents/S9/Entrepot_Automatise_Multi_Agents/New Unity Project/Packages
+m_EditorVersion: 6000.6.6f1 (d20c9ac777da)
+m_ResolvedPackages: []
+m_BuiltInPackagesHash: 3dbca4e48581840141a2894fab9b31649cda3e6f
