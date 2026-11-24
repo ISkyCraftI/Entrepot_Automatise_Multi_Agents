@@ -1,40 +1,55 @@
 # Entrepot_Automatise_Multi_Agents
-Projet Unity afin de simuler un Entrepot automatisé en utilsiant des multi-agents
+Projet Unity afin de simuler un entrepôt automatisé en utilisant des multi-agents.
+Projet n°1 « Entrepôt automatisé » du module Systèmes Multi-Agents (ESEO).
 
-## Prérequis
+# Initialisation
+Voir [INIT.md](INIT.md) : version de Unity, clone, Git LFS, pipeline Blender → Unity, arborescence.
 
-- **Unity Editor `6000.6.6f1`** (exactement, voir `ProjectSettings/ProjectVersion.txt`).
-  Installer cette version via Unity Hub (Installs → Install Editor → Archive : https://unity.com/releases/editor/archive).
-  Avec une autre version, certains packages (`com.unity.pipeline`, URP 17.6…) peuvent ne pas se résoudre.
-- **Git LFS** : les assets lourds (images, modèles 3D, audio…) sont stockés avec LFS.
-- Une connexion internet au premier lancement (téléchargement des packages Unity).
+# Attendus du projet
 
-## Cloner et ouvrir le projet
+L'entrepôt fonctionne en **Goods-to-Person (GTP)** : les produits viennent à l'opérateur humain.
+L'opérateur ne va pas chercher les produits dans les rayons.
 
-```bash
-git lfs install                           # une seule fois par machine, AVANT le clone
-git config --global core.longpaths true   # Windows uniquement
-git clone https://github.com/ISkyCraftI/Entrepot_Automatise_Multi_Agents.git
-```
+- **Partie Unity** : assets de l'entrepôt, des étagères et des robots-tortues ; zones de picking ;
+  bases de recharge ; NavMesh en grille (pas de diagonales, obstacles invisibles au sol) ;
+  étagères en `NavMeshObstacle` ; deux types de `NavMeshAgent` (robot à vide qui passe sous les
+  étagères, robot chargé qui les évite).
+- **Partie optimisation** : répartition des produits sur les étagères (produits souvent commandés
+  ensemble sur la même étagère) ; ordonnanceur qui transforme un carnet de commandes (fixe, puis
+  dynamique) en ordres (étagère à prendre, zone de picking, position de dépose) ; trajectoires et
+  évitement entre robots ; retour à la base la plus proche (pas d'ordre ou batterie basse) ;
+  vitesse, autonomie et temps de picking aléatoires ; remontée d'état des robots vers l'ordonnanceur.
 
-1. Cloner dans un dossier au **chemin court** (ex. `C:\dev\`). Sous Windows, un chemin trop long
-   fait échouer l'import des packages (`DirectoryNotFoundException ... Library\PackageCache\...`).
-2. Dans Unity Hub : **Add → Add project from disk** et choisir le dossier cloné
-   (celui qui contient `Assets/`, `Packages/` et `ProjectSettings/`).
-3. Premier ouverture : l'import peut durer plusieurs minutes. `Library/`, `Logs/`, `UserSettings/`
-   sont générés localement et ne sont pas versionnés.
-4. Ouvrir la scène `Assets/Scenes/SampleScene.unity`.
+Vidéos de référence :
+- Sujet (robots-tortues) : https://www.youtube.com/watch?v=Ql7Xm6q-798
+- SAVOYE X-PTS (navettes, convoyeurs, poste de préparation) : https://youtu.be/wzu_jIn9ThI
 
-## Si Git LFS était absent au moment du clone
+# Comment marche l'usine
 
-Des fichiers de ~130 octets (pointeurs LFS) apparaissent à la place des images. Corriger avec :
+## I. Stockage
 
-```bash
-git lfs install
-git lfs pull
-```
+On ne fait pas encore le remplissage du stockage. On part du principe que le stockage est infini.
 
-## Règles de travail
+## II. Robots
 
-- Toujours committer les fichiers `.meta` avec leurs assets.
-- Ne jamais committer `Library/`, `Temp/`, `Logs/`, `UserSettings/` (déjà dans `.gitignore`).
+Pour extraire du stockage (et plus tard le remplir), on utilise des [navettes 2D de chez Savoye](https://www.savoye.com/ressource/systeme-a-navettes-x-pts/).
+Pour transporter des étagères on utilise un AMR.
+Exosquelette
+
+## III. Préparation des commandes
+
+Voir https://www.savoye.com/en/ressource/shuttle-systems/
+
+## IV. Résumé schéma
+
+Stockage toujours plein -> robot qui se déplace dans les racks -> envoie à un système de tri qui -> étagères sont rangées dans une zone de stockage tampon par l'AMR -> étagère est amenée à l'opérateur pour la commande -> étagère est ramenée dans la zone tampon.
+
+# Feuille de route
+
+| Phase | Contenu | État |
+|---|---|---|
+| 0 | Reproduire en 3D la vidéo SAVOYE X-PTS : racks, navettes 2D, élévateurs, convoyeurs, tri. Stockage infini. **Pas d'étagères mobiles.** | En cours |
+| 1 | AMR (robots-tortues), étagères mobiles, zone tampon, NavMesh en grille, deux types d'agents | À faire |
+| 2 | Ordonnanceur, batterie, communication entre robots, aléas | À faire |
+
+> Phase 0 : le storyboard exact (éléments, ordre des séquences) reste à valider à partir de la vidéo.
