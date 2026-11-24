@@ -1,0 +1,48 @@
+RAILS MODULAIRES POUR LES RACKS SAVOYE V2
+
+CONTENU
+
+rails_intermediaire.fbx / .blend
+    Pour les sections au milieu d'une rangée. Les rails sont ouverts aux
+    deux extrémités pour rejoindre les modules voisins.
+
+rails_fin_gauche.fbx / .blend
+    Pour la dernière section à gauche. Une petite butée est placée à gauche
+    de chaque rail ; l'extrémité droite reste ouverte pour le raccordement.
+
+rails_raccord_elevateur_droite.fbx / .blend
+    Variante facultative pour la section située juste avant un élévateur à
+    droite. Elle garde le prolongement vers l'élévateur à droite, mais n'a
+    pas de butée du côté gauche, afin de rejoindre les autres sections.
+
+apercu_raccord.png
+    Exemple de deux sections raccordées : fin gauche à gauche et section
+    intermédiaire à droite. Les rails sont surlignés en bleu pour l'aperçu.
+    Les matériaux des fichiers 3D conservent les couleurs de la V2.
+
+PLACEMENT
+
+Utilise les racks existants « 02_etagere_rack » avec ces nouveaux rails.
+Chaque fichier contient les deux chemins de roulement sur les six niveaux.
+Pour chaque section, centre les rails dans la longueur du rack et place leur
+origine au sol, au milieu de l'allée entre les deux rangées de stockage.
+
+Pour raccorder deux sections, place les centres des rails à 9,90 m d'écart
+le long de l'allée, avec la même rotation et une échelle de 1. Les rails
+se rejoignent alors au niveau des montants. La longueur des chemins de
+roulement est de 9,90 m ; les pieds du rack dépassent légèrement les axes
+de ses montants, ce qui donne au rack une longueur hors tout de 10,043 m.
+
+Le côté gauche de « rails_fin_gauche » correspond au côté gauche de l'aperçu
+quand les éléments sont orientés de la même façon. Si tu retournes un rail,
+sa fin gauche change naturellement de côté dans la scène.
+
+Les nouveaux pivots sont au sol ; ils ne sont donc pas à la même hauteur que
+le pivot de l'ancien « 03_rails_guidage ». Si tu remplaces ce dernier dans
+une scène déjà en place, ajuste sa position verticale après remplacement.
+
+FORMATS ET AXES
+
+FBX : Forward +Z, Up Y, échelle métrique (1 unité = 1 m).
+BLEND : sources modifiables. Les FBX ont été réimportés et vérifiés dans
+Blender pour les dimensions, les matériaux et les axes.
