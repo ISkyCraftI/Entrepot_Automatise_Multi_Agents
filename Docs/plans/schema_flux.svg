@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="640" viewBox="0 0 1500 640">
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+  <path d="M0,1 L9,5 L0,9 z" fill="#1f2933"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0,1 L9,5 L0,9 z" fill="#2a6fdb"/></marker>
+<marker id="arrC" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0,1 L9,5 L0,9 z" fill="#c97a2b"/></marker>
+<marker id="arrP" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+  <path d="M0,1 L9,5 L0,9 z" fill="#7c5cbf"/></marker>
+<pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <rect width="8" height="8" fill="#f3effb"/><line x1="0" y1="0" x2="0" y2="8" stroke="#cdbfea" stroke-width="3"/></pattern>
+</defs>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="40.0" y="40.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="22" font-weight="700" fill="#1f2933" text-anchor="start">Schéma de flux — agents et circulation des charges</text>
+<text x="40.0" y="64.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="13" font-weight="400" fill="#616e7c" text-anchor="start">Bleu = bacs (stock) · Orange = cartons (commandes) · Violet pointillé = phase 1 · Bord épais = agent candidat</text>
+<rect x="40.0" y="120.0" width="190.0" height="80.0" rx="8" fill="#cfe0fa" stroke="#1f2933" stroke-width="1.5" opacity="1"/>
+<text x="135.0" y="156.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#1f2933" text-anchor="middle">Rack X-PTS</text>
+<text x="135.0" y="175.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">stock « infini » (phase 0)</text>
+<rect x="290.0" y="120.0" width="170.0" height="80.0" rx="8" fill="#fde8eb" stroke="#d7263d" stroke-width="3.5" opacity="1"/>
+<text x="375.0" y="156.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#1f2933" text-anchor="middle">Navette</text>
+<text x="375.0" y="175.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">1 / niveau / allée</text>
+<rect x="520.0" y="120.0" width="170.0" height="80.0" rx="8" fill="#eef0f2" stroke="#7b8794" stroke-width="3.5" opacity="1"/>
+<text x="605.0" y="156.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#1f2933" text-anchor="middle">Élévateur</text>
+<text x="605.0" y="175.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">4 bacs / cycle</text>
+<rect x="750.0" y="120.0" width="190.0" height="80.0" rx="8" fill="#eaf2fd" stroke="#2a6fdb" stroke-width="1.5" opacity="1"/>
+<text x="845.0" y="156.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#1f2933" text-anchor="middle">Boucle bacs</text>
+<text x="845.0" y="175.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">convoyeurs + aiguillages</text>
+<rect x="1000.0" y="120.0" width="170.0" height="80.0" rx="8" fill="#eef0f2" stroke="#9aa5b1" stroke-width="1.5" opacity="1"/>
+<text x="1085.0" y="156.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#1f2933" text-anchor="middle">Séquenceur</text>
+<text x="1085.0" y="175.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">ordre des bacs / colis</text>
+<rect x="1000.0" y="300.0" width="170.0" height="90.0" rx="8" fill="#ffffff" stroke="#1f2933" stroke-width="3.5" opacity="1"/>
+<text x="1085.0" y="341.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#1f2933" text-anchor="middle">Poste G2P</text>
+<text x="1085.0" y="360.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">bac → carton</text>
+<rect x="1230.0" y="230.0" width="230.0" height="70.0" rx="8" fill="#fff9db" stroke="#e0a800" stroke-width="3.5" opacity="1"/>
+<text x="1345.0" y="261.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#1f2933" text-anchor="middle">Ordonnanceur / WCS</text>
+<text x="1345.0" y="280.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">assigne bacs, cartons, postes</text>
+<rect x="1230.0" y="340.0" width="230.0" height="60.0" rx="8" fill="#fde8eb" stroke="#d7263d" stroke-width="1.5" opacity="1"/>
+<text x="1345.0" y="366.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#1f2933" text-anchor="middle">Opérateur</text>
+<text x="1345.0" y="385.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">temps de picking aléatoire</text>
+<rect x="750.0" y="470.0" width="190.0" height="80.0" rx="8" fill="#fdf1e3" stroke="#c97a2b" stroke-width="1.5" opacity="1"/>
+<text x="845.0" y="506.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#1f2933" text-anchor="middle">Lancement colis</text>
+<text x="845.0" y="525.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">carton vide</text>
+<rect x="1000.0" y="470.0" width="170.0" height="80.0" rx="8" fill="#fdf1e3" stroke="#c97a2b" stroke-width="1.5" opacity="1"/>
+<text x="1085.0" y="506.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#1f2933" text-anchor="middle">Jivaro</text>
+<text x="1085.0" y="525.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">hauteur + fermeture</text>
+<rect x="1230.0" y="470.0" width="230.0" height="80.0" rx="8" fill="#fdf1e3" stroke="#c97a2b" stroke-width="1.5" opacity="1"/>
+<text x="1345.0" y="506.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#1f2933" text-anchor="middle">Trieur d'expédition</text>
+<text x="1345.0" y="525.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">→ palettes / quais</text>
+<polyline points="230.0,160.0 282.0,160.0" fill="none" stroke="#2a6fdb" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrB)"/>
+<polyline points="460.0,160.0 512.0,160.0" fill="none" stroke="#2a6fdb" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrB)"/>
+<polyline points="690.0,160.0 742.0,160.0" fill="none" stroke="#2a6fdb" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrB)"/>
+<polyline points="940.0,160.0 992.0,160.0" fill="none" stroke="#2a6fdb" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrB)"/>
+<polyline points="1085.0,200.0 1085.0,292.0" fill="none" stroke="#2a6fdb" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrB)"/>
+<text x="1135.0" y="260.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600" fill="#2a6fdb" text-anchor="middle">bac source</text>
+<polyline points="1000.0,325.0 870.0,325.0 870.0,208.0" fill="none" stroke="#2a6fdb" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrB)"/>
+<text x="935.0" y="317.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600" fill="#2a6fdb" text-anchor="middle">bac retour au stock</text>
+<polyline points="845.0,470.0 845.0,370.0 992.0,370.0" fill="none" stroke="#c97a2b" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrC)"/>
+<text x="915.0" y="390.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600" fill="#c97a2b" text-anchor="middle">carton vide</text>
+<polyline points="1085.0,390.0 1085.0,462.0" fill="none" stroke="#c97a2b" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrC)"/>
+<text x="1140.0" y="440.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600" fill="#c97a2b" text-anchor="middle">carton plein</text>
+<polyline points="1170.0,510.0 1222.0,510.0" fill="none" stroke="#c97a2b" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arrC)"/>
+<polyline points="1230.0,370.0 1178.0,370.0" fill="none" stroke="#d7263d" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<polyline points="1345.0,300.0 1345.0,332.0" fill="none" stroke="#e0a800" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<polyline points="1460.0,265.0 1480.0,265.0 1480.0,100.0 375.0,100.0 375.0,112.0" fill="none" stroke="#e0a800" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="3 3" marker-end="url(#arr)"/>
+<text x="930.0" y="94.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600" fill="#b08900" text-anchor="middle">ordres (ordonnanceur → navettes, élévateurs, postes)</text>
+<rect x="40.0" y="310.0" width="230.0" height="90.0" rx="8" fill="url(#hatch)" stroke="#7c5cbf" stroke-width="1.5" stroke-dasharray="6 4" opacity="1"/>
+<text x="155.0" y="351.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#7c5cbf" text-anchor="middle">Zone tampon étagères</text>
+<text x="155.0" y="370.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">grille, NavMeshObstacle</text>
+<rect x="340.0" y="310.0" width="190.0" height="90.0" rx="8" fill="#ffffff" stroke="#7c5cbf" stroke-width="3.5" stroke-dasharray="6 4" opacity="1"/>
+<text x="435.0" y="351.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#7c5cbf" text-anchor="middle">AMR / robot-tortue</text>
+<text x="435.0" y="370.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">à vide · chargé (2 agents)</text>
+<rect x="340.0" y="480.0" width="190.0" height="70.0" rx="8" fill="#ffffff" stroke="#7c5cbf" stroke-width="1.5" stroke-dasharray="6 4" opacity="1"/>
+<text x="435.0" y="511.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#7c5cbf" text-anchor="middle">Poste opérateur AMR</text>
+<text x="435.0" y="530.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">phase 1</text>
+<rect x="570.0" y="310.0" width="150.0" height="90.0" rx="8" fill="#fff4e6" stroke="#e8590c" stroke-width="1.5" stroke-dasharray="5 3" opacity="1"/>
+<text x="645.0" y="351.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="14" font-weight="700" fill="#e8590c" text-anchor="middle">Bacs → étagères</text>
+<text x="645.0" y="370.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="500" fill="#616e7c" text-anchor="middle">? À DÉFINIR</text>
+<polyline points="790.0,200.0 790.0,245.0 645.0,245.0 645.0,302.0" fill="none" stroke="#7c5cbf" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#arrP)"/>
+<polyline points="570.0,355.0 538.0,355.0" fill="none" stroke="#7c5cbf" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#arrP)"/>
+<polyline points="340.0,355.0 278.0,355.0" fill="none" stroke="#7c5cbf" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#arrP)"/>
+<polyline points="155.0,400.0 155.0,515.0 332.0,515.0" fill="none" stroke="#7c5cbf" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#arrP)"/>
+<text x="240.0" y="505.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="11" font-weight="600" fill="#7c5cbf" text-anchor="middle">étagère → opérateur</text>
+<polyline points="435.0,480.0 435.0,408.0" fill="none" stroke="#7c5cbf" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#arrP)"/>
+<text x="40.0" y="610.0" font-family="Inter, DejaVu Sans, sans-serif" font-size="12" font-weight="400" fill="#616e7c" text-anchor="start">Agents candidats (bord épais) : navette, élévateur, poste, AMR, ordonnanceur. Les convoyeurs restent des objets passifs pilotés par l'ordonnanceur — à discuter.</text>
+</svg>
