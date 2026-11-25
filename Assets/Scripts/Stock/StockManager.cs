@@ -103,5 +103,16 @@ namespace Entrepot.Stock
 
         /// <summary>Identifiant du bac porté par un GameObject en transit (0 si inconnu).</summary>
         public int GetTransitBinId(GameObject go) => _inTransit.TryGetValue(go, out int id) ? id : 0;
+
+        /// <summary>Nombre de bacs sortis de l'entrepôt depuis le début (KPI).</summary>
+        public int ShippedCount { get; private set; }
+
+        /// <summary>Un bac en transit quitte l'entrepôt (fin du convoyeur de sortie) : le GameObject est détruit.</summary>
+        public void Ship(GameObject go)
+        {
+            if (!_inTransit.Remove(go)) throw new System.ArgumentException($"{go.name} n'est pas un bac en transit.");
+            ShippedCount++;
+            if (Application.isPlaying) Destroy(go); else DestroyImmediate(go);
+        }
     }
 }
