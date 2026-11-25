@@ -37,6 +37,6 @@ namespace Entrepot.Stock
         public override int GetHashCode() => HashCode.Combine(Aisle, Side, Position, Level, Depth);
 
         public override string ToString() =>
-            $"A{Aisle + 1}-{(Side == SideSouth ? "S" : "N")}-P{Position:00}-N{Level + 1:00}-{(Depth == DepthFront ? "Av" : "Ar")}";
+            $"A{Aisle + 1}-N{Level + 1:00}-{(Side == SideSouth ? "Sud" : "Nord")}-P{Position:00}-{(Depth == DepthFront ? "Av" : "Ar")}";
     }
 }

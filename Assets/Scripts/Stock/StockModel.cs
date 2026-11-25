@@ -32,18 +32,27 @@ namespace Entrepot.Stock
         }
 
         // --- Adressage -----------------------------------------------------------
+        // Ordre : allée → niveau → côté → position → profondeur.
+        // - Une allée + un niveau = le territoire d'une navette = un bloc continu du tableau.
+        // - Profondeur en dernier : l'avant (index pair) et l'arrière (index impair) d'une case sont voisins.
+
+        /// <summary>Nombre de places servies par une navette (une allée, un niveau).</summary>
+        public int SlotsPerLevel => Sides * Positions * Depths;
 
         public int Index(SlotAddress a) =>
-            (((a.Aisle * Sides + a.Side) * Positions + a.Position) * Levels + a.Level) * Depths + a.Depth;
+            (((a.Aisle * Levels + a.Level) * Sides + a.Side) * Positions + a.Position) * Depths + a.Depth;
 
         public SlotAddress Address(int index)
         {
             int depth = index % Depths; index /= Depths;
-            int level = index % Levels; index /= Levels;
             int position = index % Positions; index /= Positions;
             int side = index % Sides; index /= Sides;
+            int level = index % Levels; index /= Levels;
             return new SlotAddress(index, side, position, level, depth);
         }
+
+        /// <summary>Premier index du territoire d'une navette ; il s'étend sur <see cref="SlotsPerLevel"/> places.</summary>
+        public int LevelStart(int aisle, int level) => (aisle * Levels + level) * SlotsPerLevel;
 
         // --- Lecture -------------------------------------------------------------
 
